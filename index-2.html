@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Petr Sestak petr@sestak.info-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enegto project 2 - task 2</title>
+    <script src="task2.js"></script>
+  </head>
+  <body>
+    <p>Dane soubory pro javasript si volam z HTML.</p>
+    <script>
+      const countriesPopulation = [
+        { country: "China", population: 1439323776 },
+        { country: "India", population: 1379302771 },
+        // { country: "India", population: 1379302771 },
+        { country: "USA", population: 331002651 },
+        { country: "Indonesia", population: 269603400 },
+        { country: "Pakistan", population: 220892340 },
+        { country: "Bangladesh", population: 164970459 },
+        { country: "Japan", population: 126451398 },
+        { country: "Philippines", population: 109581078 },
+        { country: "Vietnam", population: 97338579 },
+        { country: "Turkey", population: 84339642 },
+      ];
+
+      const populationTotal = 8000000000;
+
+      let pop = new Population(countriesPopulation);
+
+      alert(pop.getPercentage("India", populationTotal));
+
+      let copyCountries = new Population(countriesPopulation, populationTotal);
+
+      copyCountries.sort();
+      copyCountries.createId();
+      copyCountries.determinePercent();
+      copyCountries.filter(4, 8, 1.5, 10);
+
+      copyCountries.writeToLog();
+      console.log("=====================");
+      copyCountries.writeToLog(copyCountries.filter(4, 8, 1.5, 10));
+    </script>
+  </body>
+</html>

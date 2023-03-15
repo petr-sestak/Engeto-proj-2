@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Petr Sestak petr@sestak.info-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="task.js"></script>
+    <title>2nd Engeto project</title>
+  </head>
+  <body>
+    <script>
+      const zeme = new countries([
+        "United States",
+        "China",
+        "India",
+        "Indonesia",
+        "Brazil",
+        "Pakistan",
+        "Nigeria",
+        "Bangladesh",
+        "Russia",
+        "Mexico",
+        "Japan",
+        "Philippines",
+        "Vietnam",
+        "Ethiopia",
+        "Egypt",
+        "Iran",
+        "Turkey",
+        "Democratic Republic of the Congo",
+        "Thailand",
+        "Myanmar",
+      ]);
+
+      zeme.writeToLog();
+
+      let add = zeme.addCountry("Czech");
+      switch (add) {
+        case true:
+          alert(
+            "The contry is already present at the index: " +
+              zeme.checkCountry("Czech")
+          );
+          break;
+        case false:
+          alert("Please set the correct parameter");
+          break;
+        default:
+          alert(
+            "Country added at the index: " +
+              add +
+              " Number of countries: " +
+              zeme.getNumCountries()
+          );
+      }
+
+      //Navratove hodnoty funkci je nutno zpracovat zde. Teprve zde se resi co se napise uzivateli. Proto je case tak dlouhy.
+      let index = zeme.checkCountry("Brazil");
+      switch (index) {
+        case false:
+          alert("Wrong input!");
+          break;
+        case -1:
+          alert("Country is not present!");
+          break;
+        default:
+          alert("Country is present at the index: " + index);
+      }
+
+      add = zeme.addCountry("Czech");
+      switch (add) {
+        case true:
+          alert(
+            "The country is already present at the index: " +
+              zeme.checkCountry("Czech")
+          );
+          break;
+        case false:
+          alert("Please set the correct parameter");
+          break;
+        default:
+          alert(
+            "Country added at the index: " +
+              add +
+              " Number of countries: " +
+              zeme.getNumCountries()
+          );
+      }
+
+      let rem = zeme.removeCountry("Brazil");
+      switch (rem) {
+        case -1:
+          alert("The country is not in the list!");
+          break;
+        case false:
+          alert("Wrong input format!");
+          break;
+        default:
+          alert(
+            "The selected country Brazil was removed from the index: " + rem
+          );
+      }
+
+      zeme.writeToLog();
+    </script>
+  </body>
+</html>
